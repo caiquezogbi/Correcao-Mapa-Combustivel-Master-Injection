@@ -146,6 +146,7 @@ table.list.help-t td,table.list.help-t th{white-space:normal;font-family:var(--f
 .prev-box{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
 .prev-h{font-family:var(--f-display);font-size:16px}
 .file.need{border-color:var(--bad)}
+.sig{max-width:1440px;margin:24px auto 0;padding:12px 16px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center}
 </style>
 
 <div class="wrap">
@@ -307,7 +308,7 @@ table.list.help-t td,table.list.help-t th{white-space:normal;font-family:var(--f
       <h3>Como a página trabalha</h3>
       <p>Os parâmetros entram em etapas, nesta ordem:</p>
       <ol class="help-flow">
-        <li><b>Escolhe os registros do log</b> que valem <span class="where log">log</span> — Motor quente acima de</li>
+        <li><b>Escolhe os registros do log</b><span class="where log">log</span> </li>
         <li><b>Mede o erro de cada célula</b> com esses registros</li>
         <li><b>Decide se a célula muda</b> <span class="where map">mapa</span> — Tolerância, Amostras mínimas, Erro grande, Amostras p/ erro grande</li>
         <li><b>Define quanto muda</b> <span class="where map">mapa</span> — Aplicar da correção, Mudança máx. por célula</li>
@@ -351,11 +352,7 @@ table.list.help-t td,table.list.help-t th{white-space:normal;font-family:var(--f
       <h3>Motor quente acima de (°C) <span class="where log">log</span></h3>
       <p>Só usa registros com a água acima desta temperatura; o resto do log é ignorado.</p>
       <p><b>Por quê:</b> com o motor frio a ECU coloca combustível a mais para aquecer, e a correção daquele momento não mostra o erro do mapa principal.</p>
-      <ul>
-        <li><b>82 °C (padrão):</b> ignora o começo do log, enquanto o carro esquenta.</li>
-        <li><b>Subir (ex.: 88):</b> menos registros, só com o motor bem quente.</li>
-        <li><b>Baixar (ex.: 70):</b> mais registros, mas com risco de corrigir o mapa por causa do aquecimento.</li>
-      </ul>
+     
     </section>
 
     <section id="hp-tol">
@@ -446,6 +443,7 @@ table.list.help-t td,table.list.help-t th{white-space:normal;font-family:var(--f
     </section>
   </div>
 </dialog>
+<footer class="sig">Sistema desenvolvido por Caique Zogbi · 2026</footer>
 
 <script>
 // Núcleo de cálculo do ajuste de combustível (sem DOM). Usado pela página e pelos testes em Node.
